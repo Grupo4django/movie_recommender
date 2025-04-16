@@ -1,0 +1,12 @@
+<h1>Reviews for {{ movie.title }}</h1>
+<ul>
+    {% for review in reviews %}
+        <li>
+            <strong>{{ review.title }}</strong> by {{ review.user.username }} ({{ review.rating }}/10)
+            <p>{{ review.content }}</p>
+        </li>
+    {% empty %}
+        <li>No reviews yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'create_review' movie.id %}">Write a Review</a>

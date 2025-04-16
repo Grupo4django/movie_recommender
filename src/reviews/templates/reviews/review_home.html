@@ -1,0 +1,10 @@
+<h1>Movies with Reviews</h1>
+<ul>
+    {% for movie in movies %}
+        <li>
+            <a href="{% url 'review_list' movie.id %}">{{ movie.title }}</a>
+        </li>
+    {% empty %}
+        <li>No movies with reviews yet.</li>
+    {% endfor %}
+</ul>
